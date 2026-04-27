@@ -791,9 +791,11 @@ document.querySelectorAll('.cat-tile').forEach(c=>{
   });
 })();
 
-const bt=document.getElementById('backTop');
-window.addEventListener('scroll',()=>bt.classList.toggle('show',window.scrollY>500));
-bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const bt = document.getElementById('backTop');
+if (bt) {
+  window.addEventListener('scroll', () => bt.classList.toggle('show', window.scrollY > 500));
+  bt.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+}
 
 (()=>{
   const els=document.querySelectorAll('.event-timer-val[data-target]');
